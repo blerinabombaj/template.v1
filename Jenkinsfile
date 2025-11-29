@@ -30,15 +30,15 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('Build Docker') {
-            steps {
-                sh '''
-                    export PATH=$PATH:/usr/local/bin
-                    docker build -t digdigdigdig/jenkins-template:${BUILD_NUMBER} -f Dockerfile.example .
-                    docker tag digdigdigdig/jenkins-template:${BUILD_NUMBER} digdigdigdig/jenkins-template:latest
-                '''
-            }
-        }
+       stage('Build Docker') {
+    steps {
+        sh '''
+            export PATH=$PATH:/usr/local/bin
+            docker build -t digdigdigdig/jenkins-template:${BUILD_NUMBER} .
+            docker tag digdigdigdig/jenkins-template:${BUILD_NUMBER} digdigdigdig/jenkins-template:latest
+        '''
+    }
+}
         stage('Push Docker') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
