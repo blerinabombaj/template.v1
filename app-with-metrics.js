@@ -17,7 +17,8 @@ app.get('/metrics', async (req, res) => {
 app.use(express.json());
 
 // === YOUR PROJECT ROUTES START HERE ===
-app.get('/api/health', (req, res) => res.json({ status: 'OK' }));
+app.get('/api/products', (req, res) => res.json({ products: [] }));
+app.post('/api/orders', (req, res) => { /* your logic */ });
 
 // Add your routes below...
 
