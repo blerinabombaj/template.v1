@@ -19,6 +19,7 @@ app.use(express.json());
 // === YOUR PROJECT ROUTES START HERE ===
 app.get('/api/products', (req, res) => res.json({ products: [] }));
 app.post('/api/orders', (req, res) => { /* your logic */ });
+app.get('/api/dashboard', (req, res) => res.json({ data: 'xxxxx data' }));
 
 // Add your routes below...
 
