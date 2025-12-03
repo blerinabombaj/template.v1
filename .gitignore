@@ -22,6 +22,3 @@ env/
 *.log
 tmp/
 temp/
-
-# Docker
-.dockerignore  # Ignore this file itself
